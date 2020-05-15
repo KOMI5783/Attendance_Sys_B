@@ -1,25 +1,11 @@
-<div class="container">
-      
-<div class="row">
-  
-  <div class="col-md-7">
-    <div class="center jumbotron" id="top-main" style="background-color:white";>
-      <h1 id="top-main-title">TaskApp</h1>
-      <p>TaskAppは簡易ToDo管理ツールです。</p>
-      <p>↓↓初めてのご利用↓↓</p>
-        <a class="btn btn-lg btn-success " href="/signup">アカウント作成</a>
-        <div style="margin-top: 10px;">
-          <a class="btn btn-danger" href="/guest-admin/login">ゲストログイン（管理権限）</a>
-          <a class="btn btn-warning" href="/guest/login">ゲストログイン（一般権限）</a>
-        </div>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <h1>ログイン</h1>
-
-  </div>
-</div>
-
-      
-</div>
+<% provide(:title, "Top") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | AttendanceSysB</title>
+  </head>
+  <body>
+    <h1>勤怠管理システム</h1>
+    <p>このアプリケーションでは、登録されたユーザーの勤怠情報を閲覧・登録・編集することができます。</p>
+  </body>
+</html>
