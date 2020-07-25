@@ -30,6 +30,14 @@ class ApplicationController < ActionController::Base
     redirect_to root_url unless current_user.admin?
   end
 
+  def limitation_correct_user
+    @user = User.find(params[:id])
+    unless @user.user_id == @current_user.id
+      flash[:notice]= "自分以外のユーザーの投稿は編集できません。"
+      redirect_to current_user
+    end
+  end
+
   # ページ出力前に1ヶ月分のデータの存在を確認・セットします。
   def set_one_month 
     @first_day = params[:date].nil? ?
